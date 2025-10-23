@@ -41,16 +41,16 @@
                 data-number="2"
                 class="slideNumber2 w-full h-full flex flex-wrap justify-center bg-white absolute top-0 left-0 z-40"
               >
-                  <figure class="w-full h-[300px]">
-                    <img
-                      class="w-[90%] mt-3 rounded-2xl object-cover mx-auto"
-                      src="src/images/2.jpg"
-                      alt=""
-                    />
-                  </figure>
-                  <h6 class="text-[#222224] text-lg text-center mt-5 w-full">
-                    Northface Remix
-                  </h6>
+                <figure class="w-full h-[300px]">
+                  <img
+                    class="w-[90%] mt-3 rounded-2xl object-cover mx-auto"
+                    src="src/images/2.jpg"
+                    alt=""
+                  />
+                </figure>
+                <h6 class="text-[#222224] text-lg text-center mt-5 w-full">
+                  Northface Remix
+                </h6>
               </div>
               <!-- slide 3 -->
               <!-- <div class="">Slide 3</div>
@@ -67,7 +67,7 @@
         <div class="w-[50%] h-full pt-6 pr-6">
           <ul class="">
             <!-- 11111111111111111111111111111111 -->
-            <li
+            <li id="wrapper1"
               class="flex items-center justify-between cursor-pointer pb-3 border-b-2 border-b-[#6490f6]"
             >
               <audio
@@ -106,7 +106,7 @@
               </div>
             </li>
             <!-- 22222222222222222222222 -->
-            <li
+            <li id="wrapper2"
               class="flex items-center justify-between cursor-pointer pb-3 border-b-2 border-b-[#6490f6] mt-5"
             >
               <audio
@@ -159,7 +159,7 @@
               alt=""
             />
             <!-- backward -->
-            <img
+            <img id="backward"
               class="w-[25px] h-[25px] hover:scale-110 duration-500 cursor-pointer"
               src="src/icons/icons8-backward-96.png"
               alt=""
@@ -178,8 +178,8 @@
               src="src/icons/icons8-pause-64.png"
               alt=""
             />
-            <!-- backward -->
-            <img
+            <!-- forward -->
+            <img id="forward"
               class="w-[25px] h-[25px] hover:scale-110 duration-500 cursor-pointer"
               src="src/icons/icons8-backward-96 (2).png"
               alt=""
@@ -194,10 +194,10 @@
             </div>
           </div>
           <!-- line play -->
-          <div
+          <div id="TimeLineMusicWrapper"
             class="w-[90%] h-1.5 bg-amber-100 mx-auto mt-3 rounded-full bg-gradient-to-r from-white via-[#0077ffef] relative cursor-pointer"
           >
-            <div
+            <div id="TimeLineMusic"
               class="absolute left-0 top-0.5 -translate-1/2 w-4 h-4 bg-white rounded-full"
             ></div>
           </div>
