@@ -1,37 +1,77 @@
-var swiper = new Swiper(".mySwiper", {
-  effect: "cards",
-  grabCursor: true,
-});
 // buttons
 
 let playBtn = document.querySelector("#playBtn");
 let pauseBtn = document.querySelector("#pauseBtn");
 
-let firstMusic = document.querySelector("#firstMusic");
+let musicItems = document.querySelectorAll("li");
 
-let firstMusicBtn = document.querySelector("#firstMusicBtn");
+musicItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    // تمام آهنگ ها
+    let _audioAll = document.querySelectorAll("audio");
 
-firstMusicBtn.addEventListener("click", () => {
-  firstMusic.play();
-  playBtn.classList.add("hidden");
-  pauseBtn.classList.remove("hidden");
-  pauseBtn.classList.add("flex");
-});
+    let MusicClickOn = item.querySelector("audio");
 
-pauseBtn.addEventListener("click", () => {
-  firstMusic.pause();
-  pauseBtn.classList.remove("flex");
-  pauseBtn.classList.add("hidden");
+    let dataNumberMusicClickOn = MusicClickOn.getAttribute("data-number");
+    console.log(dataNumberMusicClickOn);
 
-  playBtn.classList.remove("hidden");
-  playBtn.classList.add("flex");
-});
+    // آهنگ های قبلی pause میشن
+    _audioAll.forEach((audio) => {
+      audio.pause();
+      audio.currentTime = 0;
+    });
 
-playBtn.addEventListener("click", () => {
-  firstMusic.play();
-  pauseBtn.classList.remove("hidden");
-  pauseBtn.classList.add("flex");
+    // آهنگی که پلی کردیم
+    let _audio = item.querySelector(".musics");
+    _audio.play();
 
-  playBtn.classList.remove("flex");
-  playBtn.classList.add("hidden");
+    // دکمه ها بیاد و انگار آهنگ پلی هست
+    playBtn.classList.add("hidden");
+    pauseBtn.classList.remove("hidden");
+    pauseBtn.classList.add("flex");
+
+    // play btn
+    playBtn.addEventListener("click", () => {
+      // برای آهنگ های قبلی ریست شه
+      _audioAll.forEach((audio) => {
+        audio.pause();
+      });
+      // آهنگ پلی شه
+      _audio.play();
+      // دکمه ها درست شن
+      playBtn.classList.remove("block");
+      playBtn.classList.add("hidden");
+      // ///////////////
+      pauseBtn.classList.remove("hidden");
+      pauseBtn.classList.add("flex");
+    });
+
+    // pause btn
+    pauseBtn.addEventListener("click", () => {
+      // برای آهنگ های قبلی ریست شه
+      _audioAll.forEach((audio) => {
+        audio.pause();
+      });
+      // آهنگ پلی شه
+      _audio.pause();
+      // دکمه ها درست شن
+      playBtn.classList.remove("hidden");
+      playBtn.classList.add("block");
+      // /////////////////
+      pauseBtn.classList.remove("flex");
+      pauseBtn.classList.add("hidden");
+    });
+
+    let covers = document.querySelector(".slideNumber2");
+
+    // covers.forEach((cover) => {
+    //   let slideNumbers = cover.getAttribute("data-number");
+    // });
+
+    if (dataNumberMusicClickOn == 2) {
+      covers.classList.remove("z-40");
+      covers.classList.add("z-50");
+      console.log("hello");
+    }
+  });
 });
