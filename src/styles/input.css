@@ -2,8 +2,8 @@
 /* npx @tailwindcss/cli -i ./src/styles/input.css -o ./src/styles/output.css --watch */
 
 .swiper {
-  width: 240px;
-  height: 320px;
+  width: 305px;
+  height: 390px;
 }
 
 .swiper-slide {
@@ -14,10 +14,6 @@
   font-size: 22px;
   font-weight: bold;
   color: #fff;
-}
-
-.swiper-slide:nth-child(1n) {
-  background-color: rgb(206, 17, 17);
 }
 
 .swiper-slide:nth-child(2n) {

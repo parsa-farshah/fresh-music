@@ -16,16 +16,41 @@
     >
       <!--------------------------------- wrapper ------------------------------->
       <div
-        class="w-[90%] h-[90%] backdrop-blur-lg border-2 border-[#c7c7c7a8] rounded-2xl flex overflow-hidden"
+        class="w-[90%] h-[90%] backdrop-blur-lg border-2 border-[#c7c7c7a8] rounded-2xl flex overflow-hidden relative"
       >
         <!-- slider -->
-        <div
-          class="w-[50%] h-full  flex justify-center items-center"
-        >
+        <div class="w-[50%] h-full flex justify-center items-center">
           <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">Slide 1</div>
-              <div class="swiper-slide">Slide 2</div>
+              <!-- slide 1 -->
+              <div class="swiper-slide flex justify-center bg-white">
+                <figure>
+                  <img
+                    class="w-[90%] mt-3 rounded-2xl object-cover mx-auto"
+                    src="src/images/1.jpg"
+                    alt=""
+                  />
+                </figure>
+                <h6 class="text-[#222224] text-lg text-center mt-6">
+                  Hussle & Motivate
+                </h6>
+              </div>
+              <!-- slide 2 -->
+              <div class="swiper-slide">
+                <div class="swiper-slide flex justify-center bg-white">
+                  <figure>
+                    <img
+                      class="w-[90%] mt-3 rounded-2xl object-cover mx-auto"
+                      src="src/images/1.jpg"
+                      alt=""
+                    />
+                  </figure>
+                  <h6 class="text-[#222224] text-lg text-center mt-6">
+                    Hussle & Motivate
+                  </h6>
+                </div>
+              </div>
+              <!-- slide 3 -->
               <div class="swiper-slide">Slide 3</div>
               <div class="swiper-slide">Slide 4</div>
               <div class="swiper-slide">Slide 5</div>
@@ -37,7 +62,105 @@
           </div>
         </div>
         <!-- songs -->
-        <div class="w-[50%] h-full bg-amber-600"></div>
+        <div class="w-[50%] h-full pt-6 pr-6">
+          <ul>
+            <!-- 11111111111111111111111111111111 -->
+            <li
+              id="firstMusicBtn"
+              class="flex items-center justify-between cursor-pointer pb-3 border-b-2 border-b-[#6490f6]"
+            >
+              <audio
+                id="firstMusic"
+                src="src/musics/07. Hussle & Motivate.mp3"
+              ></audio>
+              <!---------------------------------- left --------------------------->
+              <div class="flex gap-5 items-center">
+                <figure>
+                  <img
+                    class="w-[70px] h-[70px] rounded-md"
+                    src="src/images/cover1.jpg"
+                    alt=""
+                  />
+                </figure>
+                <div>
+                  <h5 class="text-[#e2e3e3] font-black">Hussle & Motivate</h5>
+                  <span class="capitalize text-[#e2e3e367] font-black"
+                    >nipsey hussle</span
+                  >
+                </div>
+              </div>
+              <!--------------------------------- right ------------------>
+              <div class="flex items-center gap-10">
+                <!-- time -->
+                <span class="capitalize text-[#e2e3e367] font-black">4:18</span>
+                <!-- like icon -->
+                <figure>
+                  <img
+                    class="w-[40px] h-[40px]"
+                    src="src/images/like.png"
+                    alt=""
+                  />
+                </figure>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <!-- control player -->
+        <div
+          class="w-[85%] h-[90px] rounded-2xl backdrop-blur-3xl bg-[#0415ff31] absolute border border-[#eeeeee4b] bottom-7 left-1/2 -translate-x-1/2 z-50"
+        >
+          <!-- buttons -->
+          <div class="flex justify-center gap-3 items-center mt-4">
+            <!-- shuffle -->
+            <img
+              class="w-[25px] h-[25px] hover:scale-110 duration-500 cursor-pointer"
+              src="src/icons/icons8-shuffle-80.png"
+              alt=""
+            />
+            <!-- backward -->
+            <img
+              class="w-[25px] h-[25px] hover:scale-110 duration-500 cursor-pointer"
+              src="src/icons/icons8-backward-96.png"
+              alt=""
+            />
+            <!-- play -->
+            <img
+              id="playBtn"
+              class="w-[40px] h-[40px] hover:scale-110 duration-500 cursor-pointer"
+              src="src/icons/icons8-play-64.png"
+              alt=""
+            />
+            <!-- pause -->
+            <img
+              id="pauseBtn"
+              class="w-[40px] h-[40px] hidden hover:scale-110 duration-500 cursor-pointer"
+              src="src/icons/icons8-pause-64.png"
+              alt=""
+            />
+            <!-- backward -->
+            <img
+              class="w-[25px] h-[25px] hover:scale-110 duration-500 cursor-pointer"
+              src="src/icons/icons8-backward-96 (2).png"
+              alt=""
+            />
+            <!-- sound -->
+            <div>
+              <img
+                class="w-[25px] h-[25px] hover:scale-110 duration-500 cursor-pointer"
+                src="src/icons/icons8-sound-96.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <!-- line play -->
+          <div
+            class="w-[90%] h-1.5 bg-amber-100 mx-auto mt-3 rounded-full bg-gradient-to-r from-white via-[#0077ffef] relative cursor-pointer"
+          >
+            <div
+              class="absolute left-0 top-0.5 -translate-1/2 w-4 h-4 bg-white rounded-full"
+            ></div>
+          </div>
+        </div>
       </div>
     </main>
   </body>
