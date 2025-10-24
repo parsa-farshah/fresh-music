@@ -13,9 +13,9 @@ let soundLine = document.querySelector("#soundLine");
 let _audioAll = document.querySelectorAll("audio");
 
 // play hussle and motivate
-playBtn.addEventListener("click", () => {
-  _audioAll[0].click();
-});
+// playBtn.addEventListener("click", () => {
+//   _audioAll[0].click();
+// });
 
 let shuffle = document.querySelector("#shuffle");
 
@@ -39,7 +39,6 @@ musicItems.forEach((item) => {
     // آهنگ های قبلی pause میشن
     _audioAll.forEach((audio) => {
       audio.pause();
-      audio.currentTime = 0;
     });
 
     musicsLi.forEach((itemsLi) => {
@@ -113,66 +112,96 @@ musicItems.forEach((item) => {
     });
 
     //////////////////////////////////////////////////////////// covers Slide
+    let coverMusic0 = document.querySelector(".slideNumber0");
     let coverMusic1 = document.querySelector(".slideNumber");
     let coverMusic2 = document.querySelector(".slideNumber2");
     let coverMusic3 = document.querySelector(".slideNumber3");
     let coverMusic4 = document.querySelector(".slideNumber4");
     let coverMusic5 = document.querySelector(".slideNumber5");
     let coverMusic6 = document.querySelector(".slideNumber6");
+    let coverMusic7 = document.querySelector(".slideNumber7");
 
     if (dataNumberMusicClickOn == 1) {
+      coverMusic0.classList.remove("z-50");
       coverMusic1.classList.remove("z-40");
       coverMusic2.classList.remove("z-50");
       coverMusic3.classList.remove("z-50");
       coverMusic4.classList.remove("z-50");
       coverMusic5.classList.remove("z-50");
       coverMusic6.classList.remove("z-50");
+      coverMusic7.classList.remove("z-50");
 
       coverMusic1.classList.add("z-50");
     }
     if (dataNumberMusicClickOn == 2) {
+      coverMusic0.classList.remove("z-50");
+
       coverMusic2.classList.remove("z-40");
       coverMusic3.classList.remove("z-50");
       coverMusic4.classList.remove("z-50");
       coverMusic5.classList.remove("z-50");
       coverMusic6.classList.remove("z-50");
+      coverMusic7.classList.remove("z-50");
 
       coverMusic2.classList.add("z-50");
     }
     if (dataNumberMusicClickOn == 3) {
+      coverMusic0.classList.remove("z-50");
+
       coverMusic1.classList.remove("z-50");
       coverMusic2.classList.remove("z-50");
       coverMusic4.classList.remove("z-50");
       coverMusic5.classList.remove("z-50");
       coverMusic6.classList.remove("z-50");
+      coverMusic7.classList.remove("z-50");
 
       coverMusic3.classList.add("z-50");
     }
     if (dataNumberMusicClickOn == 4) {
+      coverMusic0.classList.remove("z-50");
+
       coverMusic1.classList.remove("z-50");
       coverMusic2.classList.remove("z-50");
       coverMusic3.classList.remove("z-50");
       coverMusic5.classList.remove("z-50");
       coverMusic6.classList.remove("z-50");
+      coverMusic7.classList.remove("z-50");
 
       coverMusic4.classList.add("z-50");
     }
     if (dataNumberMusicClickOn == 5) {
+      coverMusic0.classList.remove("z-50");
+
       coverMusic1.classList.remove("z-50");
       coverMusic2.classList.remove("z-50");
       coverMusic3.classList.remove("z-50");
       coverMusic4.classList.remove("z-50");
       coverMusic6.classList.remove("z-50");
+      coverMusic7.classList.remove("z-50");
 
       coverMusic5.classList.add("z-50");
     }
     if (dataNumberMusicClickOn == 6) {
+      coverMusic0.classList.remove("z-50");
+
       coverMusic1.classList.remove("z-50");
       coverMusic2.classList.remove("z-50");
       coverMusic3.classList.remove("z-50");
       coverMusic4.classList.remove("z-50");
       coverMusic5.classList.remove("z-50");
+      coverMusic7.classList.remove("z-50");
       coverMusic6.classList.add("z-50");
+    }
+    if (dataNumberMusicClickOn == 7) {
+      coverMusic0.classList.remove("z-50");
+
+      coverMusic1.classList.remove("z-50");
+      coverMusic2.classList.remove("z-50");
+      coverMusic3.classList.remove("z-50");
+      coverMusic4.classList.remove("z-50");
+      coverMusic5.classList.remove("z-50");
+      coverMusic6.classList.remove("z-50");
+      coverMusic7.classList.add("z-50");
     }
 
     // forward music
@@ -196,6 +225,9 @@ musicItems.forEach((item) => {
       if (dataNumberForward == 6) {
         musicItems[5].click();
       }
+      if (dataNumberForward == 7) {
+        musicItems[6].click();
+      }
     });
 
     // backward music
@@ -218,6 +250,9 @@ musicItems.forEach((item) => {
       }
       if (dataNumberForward == 6) {
         musicItems[5].click();
+      }
+      if (dataNumberForward == 7) {
+        musicItems[6].click();
       }
     });
 
