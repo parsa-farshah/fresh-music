@@ -29,14 +29,6 @@
 کاملاً ریسپانسیو و سازگار با همه مرورگرها ✅
 
 
-## 💻 نحوه استفاده  
-
-1. پروژه را Clone یا دانلود کنید:  
-
-```bash
-   git clone https://github.com/parsa-farshah/Music-Player.git
-فایل index.html را در مرورگر خود باز کنید.
-
 از موسیقی لذت ببرید 🎧
 
 📅 تاریخ انتشار
@@ -86,3 +78,14 @@ This project was developed under the mentorship of
 
 📱 Mobile View  
 <img src="src/images/3.png" alt="Mobile View" width="45%">
+
+
+
+## 💻 نحوه استفاده  
+
+1. پروژه را Clone یا دانلود کنید:  
+
+```bash
+   git clone https://github.com/parsa-farshah/Music-Player.git
+فایل index.html را در مرورگر خود باز کنید.
+
