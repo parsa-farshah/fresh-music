@@ -33,7 +33,7 @@
 
 1. پروژه را Clone یا دانلود کنید:  
 
-   ```bash
+```bash
    git clone https://github.com/parsa-farshah/Music-Player.git
 فایل index.html را در مرورگر خود باز کنید.
 

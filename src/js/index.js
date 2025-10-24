@@ -43,6 +43,7 @@ musicItems.forEach((item) => {
     // آهنگ های قبلی pause میشن
     _audioAll.forEach((audio) => {
       audio.pause();
+      audio.currentTime = 0;
     });
 
     musicsLi.forEach((itemsLi) => {
