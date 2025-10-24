@@ -25,6 +25,8 @@ shuffle.addEventListener("click", () => {
   _audioAll[shuffleNumber].click();
 });
 
+let musicsLi = document.querySelectorAll(".musicsLi");
+
 musicItems.forEach((item) => {
   item.addEventListener("click", () => {
     let dataNumberMusicClickOn = "";
@@ -39,6 +41,12 @@ musicItems.forEach((item) => {
       audio.pause();
       audio.currentTime = 0;
     });
+
+    musicsLi.forEach((itemsLi) => {
+      itemsLi.classList.remove("bg-[#d1d1d12c]");
+    });
+
+    item.classList.add("bg-[#d1d1d12c]");
 
     // آهنگی که پلی کردیم
     let _audio = item.querySelector(".musics");
