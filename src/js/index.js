@@ -21,6 +21,10 @@ let shuffle = document.querySelector("#shuffle");
 
 // shuffle play
 shuffle.addEventListener("click", () => {
+  // آهنگ های قبلی pause میشن
+  _audioAll.forEach((audio) => {
+    audio.currentTime = 0;
+  });
   let shuffleNumber = Math.floor(Math.random() * _audioAll.length);
   _audioAll[shuffleNumber].click();
 });
@@ -61,6 +65,7 @@ musicItems.forEach((item) => {
       // برای آهنگ های قبلی ریست شه
       _audioAll.forEach((audio) => {
         audio.pause();
+        audio.currentTime = 0;
       });
       // آهنگ پلی شه
       _audio.play();
@@ -206,6 +211,10 @@ musicItems.forEach((item) => {
 
     // forward music
     _forward.addEventListener("click", () => {
+      _audioAll.forEach((audio) => {
+        audio.pause();
+        audio.currentTime = 0;
+      });
       dataNumberForward = parseInt(dataNumberMusicClickOn) + 1;
       if (dataNumberForward == 1) {
         musicItems[0].click();
@@ -232,6 +241,10 @@ musicItems.forEach((item) => {
 
     // backward music
     _backward.addEventListener("click", () => {
+      _audioAll.forEach((audio) => {
+        audio.pause();
+        audio.currentTime = 0;
+      });
       dataNumberForward = parseInt(dataNumberMusicClickOn) - 1;
       if (dataNumberForward == 1) {
         musicItems[0].click();
