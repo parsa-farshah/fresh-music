@@ -32,7 +32,7 @@
                     alt=""
                   />
                 </figure>
-                <h6 class="text-[#222224] text-lg text-center mt-5 w-full">
+                <h6 class="text-[#222224] text-lg text-center mt-0 font-black w-full">
                   Hussle & Motivate
                 </h6>
               </div>
@@ -48,18 +48,33 @@
                     alt=""
                   />
                 </figure>
-                <h6 class="text-[#222224] text-lg text-center mt-5 w-full">
+                <h6 class="text-[#222224] text-lg text-center mt-0 font-black w-full">
                   Northface Remix
                 </h6>
               </div>
               <!-- slide 3 -->
-              <!-- <div class="">Slide 3</div>
+              <div
+                data-number="3"
+                class="slideNumber3 w-full h-full flex flex-wrap justify-center bg-white absolute top-0 left-0 z-40"
+              >
+                <figure class="w-full h-[300px]">
+                  <img
+                    class="w-[90%] h-full mt-3 rounded-2xl object-cover mx-auto"
+                    src="src/images/3.jpg"
+                    alt=""
+                  />
+                </figure>
+                <h6 class="text-[#222224] text-lg text-center mt-0 font-black w-full">
+                  Ghol Midam
+                </h6>
+              </div>
               <div class="">Slide 4</div>
               <div class="">Slide 5</div>
               <div class="">Slide 6</div>
               <div class="">Slide 7</div>
               <div class="">Slide 8</div>
-              <div class="">Slide 9</div> -->
+              <div class="">Slide 9</div>
+              -->
             </div>
           </div>
         </div>
@@ -146,6 +161,46 @@
                 </figure>
               </div>
             </li>
+            <!-- 33333333333333333333333333333 -->
+            <li
+              id="wrapper3"
+              class="flex items-center justify-between cursor-pointer pb-3 border-b-2 border-b-[#6490f6] mt-5"
+            >
+              <audio
+                data-number="3"
+                class="musics musicsReset3"
+                src="src/musics/08. Ghol Midam (Ft. Zakhmi).mp3"
+              ></audio>
+              <!---------------------------------- left --------------------------->
+              <div class="flex gap-5 items-center">
+                <figure>
+                  <img
+                    class="w-[70px] h-[70px] rounded-md"
+                    src="src/images/3.jpg"
+                    alt=""
+                  />
+                </figure>
+                <div>
+                  <h5 class="text-[#e2e3e3] font-black">Ghol Midam</h5>
+                  <span class="capitalize text-[#e2e3e367] font-black"
+                    >Mehrad Hidden</span
+                  >
+                </div>
+              </div>
+              <!--------------------------------- right ------------------>
+              <div class="flex items-center gap-10">
+                <!-- time -->
+                <span class="capitalize text-[#e2e3e367] font-black">5:33</span>
+                <!-- like icon -->
+                <figure>
+                  <img
+                    class="w-[40px] h-[40px]"
+                    src="src/images/like.png"
+                    alt=""
+                  />
+                </figure>
+              </div>
+            </li>
           </ul>
         </div>
         <!-- control player -->
@@ -161,6 +216,7 @@
           <div class="flex justify-center gap-3 items-center mt-4">
             <!-- shuffle -->
             <img
+              id="shuffle"
               class="w-[25px] h-[25px] hover:scale-110 duration-500 cursor-pointer"
               src="src/icons/icons8-shuffle-80.png"
               alt=""
@@ -195,12 +251,14 @@
             />
             <!-- sound -->
             <div class="flex gap-3 items-center relative">
-              <img id="audio"
+              <img
+                id="audio"
                 class="w-[25px] flex h-[25px] hover:scale-110 duration-500 cursor-pointer"
                 src="src/icons/icons8-sound-96.png"
                 alt=""
               />
-              <img id="noAudio"
+              <img
+                id="noAudio"
                 class="w-[25px] hidden h-[25px] hover:scale-110 duration-500 cursor-pointer"
                 src="src/icons/icons8-no-audio-96.png"
                 alt=""
@@ -209,7 +267,11 @@
                 id="soundLine"
                 class="w-[100px] h-1.5 cursor-pointer bg-[#a8a8a88c] rounded-full absolute left-[115%]"
               >
-                <div id="dotLine" style="width: 100%;" class="relative duration-300 h-full bg-white rounded-full">
+                <div
+                  id="dotLine"
+                  style="width: 100%"
+                  class="relative duration-300 h-full bg-white rounded-full"
+                >
                   <div
                     id="dotSound"
                     class="w-[15px] duration-200 h-[15px] bg-amber-50 rounded-full absolute left-[90px] -top-1"
@@ -225,7 +287,7 @@
           >
             <div
               id="TimeLineMusic"
-              class="absolute left-0 top-0.5 -translate-1/2 w-4 h-4 bg-white rounded-full"
+              class="absolute left-0 top-0.5 -translate-1/2 w-4 h-4 bg-white rounded-full duration-500"
             ></div>
           </div>
         </div>

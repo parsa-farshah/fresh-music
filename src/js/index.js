@@ -10,11 +10,26 @@ let _backward = document.querySelector("#backward");
 
 let soundLine = document.querySelector("#soundLine");
 
+let _audioAll = document.querySelectorAll("audio");
+
+// play hussle and motivate
+playBtn.addEventListener("click", () => {
+  _audioAll[0].click();
+});
+
+let shuffle = document.querySelector("#shuffle");
+
+// shuffle play
+shuffle.addEventListener("click", () => {
+  let shuffleNumber = Math.floor(Math.random() * _audioAll.length);
+  _audioAll[shuffleNumber].click();
+});
+
 musicItems.forEach((item) => {
   item.addEventListener("click", () => {
     let dataNumberMusicClickOn = "";
     // تمام آهنگ ها
-    let _audioAll = document.querySelectorAll("audio");
+
     let MusicClickOn = item.querySelector("audio");
 
     dataNumberMusicClickOn = MusicClickOn.getAttribute("data-number");
@@ -78,7 +93,6 @@ musicItems.forEach((item) => {
       nowPlay.textContent = `${timeNowMinute}:${timeNowSeconds}`;
     });
 
-    // click update time line
     let TimeLineMusicWrapper = document.querySelector("#TimeLineMusicWrapper");
     TimeLineMusicWrapper.addEventListener("click", (e) => {
       let widthWrapper = TimeLineMusicWrapper.clientWidth;
@@ -88,28 +102,27 @@ musicItems.forEach((item) => {
       let newTimeClick = (click / widthWrapper) * _durationWrapper;
 
       _audio.currentTime = newTimeClick;
-
-      // let TimeNowPlay = _audio.currentTime / 60;
-      // let TimeRound = TimeNowPlay.toFixed(2);
-
-      // console.log();
     });
 
     let coverMusic1 = document.querySelector(".slideNumber");
     let coverMusic2 = document.querySelector(".slideNumber2");
+    let coverMusic3 = document.querySelector(".slideNumber3");
 
-    // covers.forEach((cover) => {
-    //   let slideNumbers = cover.getAttribute("data-number");
-    // });
     if (dataNumberMusicClickOn == 1) {
       coverMusic1.classList.remove("z-40");
       coverMusic2.classList.remove("z-50");
+      coverMusic3.classList.remove("z-50");
       coverMusic1.classList.add("z-50");
-      console.log("hello");
     }
     if (dataNumberMusicClickOn == 2) {
       coverMusic2.classList.remove("z-40");
+      coverMusic3.classList.remove("z-50");
       coverMusic2.classList.add("z-50");
+    }
+    if (dataNumberMusicClickOn == 3) {
+      coverMusic1.classList.remove("z-50");
+      coverMusic2.classList.remove("z-50");
+      coverMusic3.classList.add("z-50");
     }
 
     // forward music
@@ -121,6 +134,9 @@ musicItems.forEach((item) => {
       if (dataNumberForward == 2) {
         musicItems[1].click();
       }
+      if (dataNumberForward == 3) {
+        musicItems[2].click();
+      }
     });
 
     // backward music
@@ -131,6 +147,9 @@ musicItems.forEach((item) => {
       }
       if (dataNumberForward == 2) {
         musicItems[1].click();
+      }
+      if (dataNumberForward == 3) {
+        musicItems[2].click();
       }
     });
 
@@ -148,7 +167,7 @@ musicItems.forEach((item) => {
 
       _audio.volume = `${clickSound / 100}`;
 
-      dotLine.style.width = `${clickSound}%`
+      dotLine.style.width = `${clickSound}%`;
     });
 
     let noAudio = document.querySelector("#noAudio");
