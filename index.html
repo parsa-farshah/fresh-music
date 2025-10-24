@@ -18,10 +18,10 @@
     >
       <!--------------------------------- wrapper ------------------------------->
       <div
-        class="w-[90%] h-[90%] backdrop-blur-lg border-2 border-[#c7c7c7a8] rounded-2xl flex overflow-hidden relative"
+        class="w-[98%] md:w-[90%] h-[90%] backdrop-blur-lg border-2 border-[#c7c7c7a8] rounded-2xl flex flex-col md:flex-row overflow-y-scroll md:overflow-y-hidden relative"
       >
         <!-- slider -->
-        <div class="w-[50%] h-full flex justify-center items-center">
+        <div class="w-full md:w-[50%] h-full flex justify-center items-center">
           <div class="w-full h-full flex justify-center mt-20">
             <div
               class="relative flex w-[310px] h-[380px] rounded-2xl overflow-hidden bg-amber-300"
@@ -163,15 +163,15 @@
                 <div
                   class="text-[#ffffff] w-[90%] h-[300px] mt-3 rounded-xl bg-black text-lg text-center font-black flex justify-center items-center"
                 ></div>
-                <h6 class="font-black capitalize">
-                  click right Side for Play Music
-                </h6>
+                <h6 class="font-black capitalize">click On music for play</h6>
               </div>
             </div>
           </div>
         </div>
         <!-- songs -->
-        <div class="w-[50%] h-full pt-6 pr-6 overflow-y-scroll pb-40">
+        <div
+          class="w-full md:w-[50%] h-fit md:h-full pt-6 md:pr-6 md:overflow-y-scroll pb-40"
+        >
           <ul class="">
             <!-- 11111111111111111111111111111111 -->
             <li
@@ -403,93 +403,93 @@
             </li>
           </ul>
         </div>
-        <!-- control player -->
-        <div
-          class="w-[85%] h-[90px] rounded-2xl backdrop-blur-3xl bg-[#6b9aff] absolute border border-[#eeeeee4b] bottom-7 left-1/2 -translate-x-1/2 z-50"
-        >
-          <!-- time now playing -->
-          <h5 id="nowPlay" class="absolute top-10 right-12 text-[#e2e3e367]">
-            0:00
-          </h5>
+      </div>
+      <!-- control player -->
+      <div
+        class="w-[92%] md:w-[85%] h-[90px] rounded-2xl backdrop-blur-3xl bg-[#6b9aff56] fixed border border-[#eeeeee4b] bottom-12 left-1/2 -translate-x-1/2 z-50"
+      >
+        <!-- time now playing -->
+        <h5 id="nowPlay" class="absolute top-10 right-12 text-[#e2e3e367]">
+          0:00
+        </h5>
 
-          <!-- buttons -->
-          <div class="flex justify-center gap-3 items-center mt-4">
-            <!-- shuffle -->
+        <!-- buttons -->
+        <div class="flex justify-center gap-3 items-center mt-4">
+          <!-- shuffle -->
+          <img
+            id="shuffle"
+            class="w-[25px] h-[25px] hover:scale-110 duration-500 cursor-pointer"
+            src="src/icons/icons8-shuffle-80.png"
+            alt=""
+          />
+          <!-- backward -->
+          <img
+            id="backward"
+            class="w-[25px] h-[25px] hover:scale-110 duration-500 cursor-pointer"
+            src="src/icons/icons8-backward-96.png"
+            alt=""
+          />
+          <!-- play -->
+          <img
+            id="playBtn"
+            class="w-[40px] h-[40px] hover:scale-110 duration-500 cursor-pointer"
+            src="src/icons/icons8-play-64.png"
+            alt=""
+          />
+          <!-- pause -->
+          <img
+            id="pauseBtn"
+            class="w-[40px] h-[40px] hidden hover:scale-110 duration-500 cursor-pointer"
+            src="src/icons/icons8-pause-64.png"
+            alt=""
+          />
+          <!-- forward -->
+          <img
+            id="forward"
+            class="w-[25px] h-[25px] hover:scale-110 duration-500 cursor-pointer"
+            src="src/icons/icons8-backward-96 (2).png"
+            alt=""
+          />
+          <!-- sound -->
+          <div class="flex gap-3 items-center relative">
             <img
-              id="shuffle"
-              class="w-[25px] h-[25px] hover:scale-110 duration-500 cursor-pointer"
-              src="src/icons/icons8-shuffle-80.png"
+              id="audio"
+              class="w-[25px] flex h-[25px] hover:scale-110 duration-500 cursor-pointer"
+              src="src/icons/icons8-sound-96.png"
               alt=""
             />
-            <!-- backward -->
             <img
-              id="backward"
-              class="w-[25px] h-[25px] hover:scale-110 duration-500 cursor-pointer"
-              src="src/icons/icons8-backward-96.png"
+              id="noAudio"
+              class="w-[25px] hidden h-[25px] hover:scale-110 duration-500 cursor-pointer"
+              src="src/icons/icons8-no-audio-96.png"
               alt=""
             />
-            <!-- play -->
-            <img
-              id="playBtn"
-              class="w-[40px] h-[40px] hover:scale-110 duration-500 cursor-pointer"
-              src="src/icons/icons8-play-64.png"
-              alt=""
-            />
-            <!-- pause -->
-            <img
-              id="pauseBtn"
-              class="w-[40px] h-[40px] hidden hover:scale-110 duration-500 cursor-pointer"
-              src="src/icons/icons8-pause-64.png"
-              alt=""
-            />
-            <!-- forward -->
-            <img
-              id="forward"
-              class="w-[25px] h-[25px] hover:scale-110 duration-500 cursor-pointer"
-              src="src/icons/icons8-backward-96 (2).png"
-              alt=""
-            />
-            <!-- sound -->
-            <div class="flex gap-3 items-center relative">
-              <img
-                id="audio"
-                class="w-[25px] flex h-[25px] hover:scale-110 duration-500 cursor-pointer"
-                src="src/icons/icons8-sound-96.png"
-                alt=""
-              />
-              <img
-                id="noAudio"
-                class="w-[25px] hidden h-[25px] hover:scale-110 duration-500 cursor-pointer"
-                src="src/icons/icons8-no-audio-96.png"
-                alt=""
-              />
+            <div
+              id="soundLine"
+              class="w-[100px] h-1.5 cursor-pointer bg-[#a8a8a88c] rounded-full absolute left-[115%]"
+            >
               <div
-                id="soundLine"
-                class="w-[100px] h-1.5 cursor-pointer bg-[#a8a8a88c] rounded-full absolute left-[115%]"
+                id="dotLine"
+                style="width: 100%"
+                class="relative duration-300 h-full bg-white rounded-full"
               >
                 <div
-                  id="dotLine"
-                  style="width: 100%"
-                  class="relative duration-300 h-full bg-white rounded-full"
-                >
-                  <div
-                    id="dotSound"
-                    class="w-[15px] duration-200 h-[15px] bg-amber-50 rounded-full absolute left-[90px] -top-1"
-                  ></div>
-                </div>
+                  id="dotSound"
+                  class="w-[15px] duration-200 h-[15px] bg-amber-50 rounded-full absolute left-[90px] -top-1"
+                ></div>
               </div>
             </div>
           </div>
-          <!-- line play -->
+        </div>
+        <!-- line play -->
+        <div
+          id="TimeLineMusicWrapper"
+          class="w-[90%] h-1.5 bg-amber-100 mx-auto mt-3 rounded-full bg-gradient-to-r from-white via-[#0077ffef] relative cursor-pointer"
+        >
           <div
-            id="TimeLineMusicWrapper"
-            class="w-[90%] h-1.5 bg-amber-100 mx-auto mt-3 rounded-full bg-gradient-to-r from-white via-[#0077ffef] relative cursor-pointer"
-          >
-            <div
-              id="TimeLineMusic"
-              class="absolute left-0 top-0.5 -translate-1/2 w-4 h-4 bg-white rounded-full duration-500"
-            ></div>
-          </div>
+            id="TimeLineMusic"
+            class="absolute left-0 top-0.5 -translate-1/2 w-4 h-4 bg-white rounded-full duration-500"
+          ></div>
         </div>
       </div>
     </main>
