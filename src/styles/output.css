@@ -373,6 +373,9 @@
   .overflow-hidden {
     overflow: hidden;
   }
+  .overflow-y-scroll {
+    overflow-y: scroll;
+  }
   .rounded {
     border-radius: 0.25rem;
   }
@@ -466,6 +469,12 @@
   }
   .pb-3 {
     padding-bottom: calc(var(--spacing) * 3);
+  }
+  .pb-40 {
+    padding-bottom: calc(var(--spacing) * 40);
+  }
+  .pb-56 {
+    padding-bottom: calc(var(--spacing) * 56);
   }
   .text-center {
     text-align: center;

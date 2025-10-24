@@ -112,25 +112,67 @@ musicItems.forEach((item) => {
       _audio.currentTime = newTimeClick;
     });
 
+    //////////////////////////////////////////////////////////// covers Slide
     let coverMusic1 = document.querySelector(".slideNumber");
     let coverMusic2 = document.querySelector(".slideNumber2");
     let coverMusic3 = document.querySelector(".slideNumber3");
+    let coverMusic4 = document.querySelector(".slideNumber4");
+    let coverMusic5 = document.querySelector(".slideNumber5");
+    let coverMusic6 = document.querySelector(".slideNumber6");
 
     if (dataNumberMusicClickOn == 1) {
       coverMusic1.classList.remove("z-40");
       coverMusic2.classList.remove("z-50");
       coverMusic3.classList.remove("z-50");
+      coverMusic4.classList.remove("z-50");
+      coverMusic5.classList.remove("z-50");
+      coverMusic6.classList.remove("z-50");
+
       coverMusic1.classList.add("z-50");
     }
     if (dataNumberMusicClickOn == 2) {
       coverMusic2.classList.remove("z-40");
       coverMusic3.classList.remove("z-50");
+      coverMusic4.classList.remove("z-50");
+      coverMusic5.classList.remove("z-50");
+      coverMusic6.classList.remove("z-50");
+
       coverMusic2.classList.add("z-50");
     }
     if (dataNumberMusicClickOn == 3) {
       coverMusic1.classList.remove("z-50");
       coverMusic2.classList.remove("z-50");
+      coverMusic4.classList.remove("z-50");
+      coverMusic5.classList.remove("z-50");
+      coverMusic6.classList.remove("z-50");
+
       coverMusic3.classList.add("z-50");
+    }
+    if (dataNumberMusicClickOn == 4) {
+      coverMusic1.classList.remove("z-50");
+      coverMusic2.classList.remove("z-50");
+      coverMusic3.classList.remove("z-50");
+      coverMusic5.classList.remove("z-50");
+      coverMusic6.classList.remove("z-50");
+
+      coverMusic4.classList.add("z-50");
+    }
+    if (dataNumberMusicClickOn == 5) {
+      coverMusic1.classList.remove("z-50");
+      coverMusic2.classList.remove("z-50");
+      coverMusic3.classList.remove("z-50");
+      coverMusic4.classList.remove("z-50");
+      coverMusic6.classList.remove("z-50");
+
+      coverMusic5.classList.add("z-50");
+    }
+    if (dataNumberMusicClickOn == 6) {
+      coverMusic1.classList.remove("z-50");
+      coverMusic2.classList.remove("z-50");
+      coverMusic3.classList.remove("z-50");
+      coverMusic4.classList.remove("z-50");
+      coverMusic5.classList.remove("z-50");
+      coverMusic6.classList.add("z-50");
     }
 
     // forward music
@@ -144,6 +186,15 @@ musicItems.forEach((item) => {
       }
       if (dataNumberForward == 3) {
         musicItems[2].click();
+      }
+      if (dataNumberForward == 4) {
+        musicItems[3].click();
+      }
+      if (dataNumberForward == 5) {
+        musicItems[4].click();
+      }
+      if (dataNumberForward == 6) {
+        musicItems[5].click();
       }
     });
 
@@ -159,13 +210,23 @@ musicItems.forEach((item) => {
       if (dataNumberForward == 3) {
         musicItems[2].click();
       }
+      if (dataNumberForward == 4) {
+        musicItems[3].click();
+      }
+      if (dataNumberForward == 5) {
+        musicItems[4].click();
+      }
+      if (dataNumberForward == 6) {
+        musicItems[5].click();
+      }
     });
 
     ////////////////////////////////////////////////// sound
 
-    let clickSound;
+    let clickSound = 0;
     let dotSound = document.querySelector("#dotSound");
     let dotLine = document.querySelector("#dotLine");
+
     soundLine.addEventListener("click", (e) => {
       clickSound = e.offsetX;
 
@@ -175,7 +236,7 @@ musicItems.forEach((item) => {
 
       _audio.volume = `${clickSound / 100}`;
 
-      dotLine.style.width = `${clickSound}%`;
+      dotLine.style.width = `${clickSound}px`;
     });
 
     let noAudio = document.querySelector("#noAudio");
@@ -190,6 +251,8 @@ musicItems.forEach((item) => {
       noAudio.classList.remove("hidden");
       noAudio.classList.add("flex");
 
+      dotLine.style.width = "0px";
+
       _audio.volume = 0;
       dotSound.style.left = "0px";
     });
@@ -200,8 +263,9 @@ musicItems.forEach((item) => {
 
       noAudio.classList.remove("flex");
       noAudio.classList.add("hidden");
-
+      dotLine.style.width = `${clickSound}px`;
       dotSound.style.left = `${clickSound}px`;
+
       _audio.volume = `${clickSound / 100}`;
     });
   });
