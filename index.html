@@ -43,7 +43,7 @@
               >
                 <figure class="w-full h-[300px]">
                   <img
-                    class="w-[90%] mt-3 rounded-2xl object-cover mx-auto"
+                    class="w-[90%] h-full mt-3 rounded-2xl object-cover mx-auto"
                     src="src/images/2.jpg"
                     alt=""
                   />
@@ -67,7 +67,8 @@
         <div class="w-[50%] h-full pt-6 pr-6">
           <ul class="">
             <!-- 11111111111111111111111111111111 -->
-            <li id="wrapper1"
+            <li
+              id="wrapper1"
               class="flex items-center justify-between cursor-pointer pb-3 border-b-2 border-b-[#6490f6]"
             >
               <audio
@@ -106,7 +107,8 @@
               </div>
             </li>
             <!-- 22222222222222222222222 -->
-            <li id="wrapper2"
+            <li
+              id="wrapper2"
               class="flex items-center justify-between cursor-pointer pb-3 border-b-2 border-b-[#6490f6] mt-5"
             >
               <audio
@@ -150,6 +152,11 @@
         <div
           class="w-[85%] h-[90px] rounded-2xl backdrop-blur-3xl bg-[#0415ff31] absolute border border-[#eeeeee4b] bottom-7 left-1/2 -translate-x-1/2 z-50"
         >
+          <!-- time now playing -->
+          <h5 id="nowPlay" class="absolute top-10 right-12 text-[#e2e3e367]">
+            0:00
+          </h5>
+
           <!-- buttons -->
           <div class="flex justify-center gap-3 items-center mt-4">
             <!-- shuffle -->
@@ -159,7 +166,8 @@
               alt=""
             />
             <!-- backward -->
-            <img id="backward"
+            <img
+              id="backward"
               class="w-[25px] h-[25px] hover:scale-110 duration-500 cursor-pointer"
               src="src/icons/icons8-backward-96.png"
               alt=""
@@ -179,25 +187,44 @@
               alt=""
             />
             <!-- forward -->
-            <img id="forward"
+            <img
+              id="forward"
               class="w-[25px] h-[25px] hover:scale-110 duration-500 cursor-pointer"
               src="src/icons/icons8-backward-96 (2).png"
               alt=""
             />
             <!-- sound -->
-            <div>
-              <img
-                class="w-[25px] h-[25px] hover:scale-110 duration-500 cursor-pointer"
+            <div class="flex gap-3 items-center relative">
+              <img id="audio"
+                class="w-[25px] flex h-[25px] hover:scale-110 duration-500 cursor-pointer"
                 src="src/icons/icons8-sound-96.png"
                 alt=""
               />
+              <img id="noAudio"
+                class="w-[25px] hidden h-[25px] hover:scale-110 duration-500 cursor-pointer"
+                src="src/icons/icons8-no-audio-96.png"
+                alt=""
+              />
+              <div
+                id="soundLine"
+                class="w-[100px] h-1.5 cursor-pointer bg-[#a8a8a88c] rounded-full absolute left-[115%]"
+              >
+                <div id="dotLine" style="width: 100%;" class="relative duration-300 h-full bg-white rounded-full">
+                  <div
+                    id="dotSound"
+                    class="w-[15px] duration-200 h-[15px] bg-amber-50 rounded-full absolute left-[90px] -top-1"
+                  ></div>
+                </div>
+              </div>
             </div>
           </div>
           <!-- line play -->
-          <div id="TimeLineMusicWrapper"
+          <div
+            id="TimeLineMusicWrapper"
             class="w-[90%] h-1.5 bg-amber-100 mx-auto mt-3 rounded-full bg-gradient-to-r from-white via-[#0077ffef] relative cursor-pointer"
           >
-            <div id="TimeLineMusic"
+            <div
+              id="TimeLineMusic"
               class="absolute left-0 top-0.5 -translate-1/2 w-4 h-4 bg-white rounded-full"
             ></div>
           </div>

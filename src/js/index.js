@@ -8,6 +8,8 @@ let musicItems = document.querySelectorAll("li");
 let _forward = document.querySelector("#forward");
 let _backward = document.querySelector("#backward");
 
+let soundLine = document.querySelector("#soundLine");
+
 musicItems.forEach((item) => {
   item.addEventListener("click", () => {
     let dataNumberMusicClickOn = "";
@@ -68,6 +70,12 @@ musicItems.forEach((item) => {
       let playLinePercent = (_audio.currentTime / _audio.duration) * 100;
       let TimeLineMusic = document.querySelector("#TimeLineMusic");
       TimeLineMusic.style.left = `${playLinePercent}%`;
+
+      let timeNowMinute = Math.floor(_audio.currentTime / 60);
+      let timeNowSeconds = Math.floor(_audio.currentTime % 60);
+
+      let nowPlay = document.querySelector("#nowPlay");
+      nowPlay.textContent = `${timeNowMinute}:${timeNowSeconds}`;
     });
 
     // click update time line
@@ -80,6 +88,11 @@ musicItems.forEach((item) => {
       let newTimeClick = (click / widthWrapper) * _durationWrapper;
 
       _audio.currentTime = newTimeClick;
+
+      // let TimeNowPlay = _audio.currentTime / 60;
+      // let TimeRound = TimeNowPlay.toFixed(2);
+
+      // console.log();
     });
 
     let coverMusic1 = document.querySelector(".slideNumber");
@@ -119,6 +132,50 @@ musicItems.forEach((item) => {
       if (dataNumberForward == 2) {
         musicItems[1].click();
       }
+    });
+
+    ////////////////////////////////////////////////// sound
+
+    let clickSound;
+    let dotSound = document.querySelector("#dotSound");
+    let dotLine = document.querySelector("#dotLine");
+    soundLine.addEventListener("click", (e) => {
+      clickSound = e.offsetX;
+
+      // select dot for sound
+
+      dotSound.style.left = `${clickSound}px`;
+
+      _audio.volume = `${clickSound / 100}`;
+
+      dotLine.style.width = `${clickSound}%`
+    });
+
+    let noAudio = document.querySelector("#noAudio");
+    let audioVolume = document.querySelector("#audio");
+
+    /////////////////////////// go to mute
+
+    audioVolume.addEventListener("click", () => {
+      audioVolume.classList.remove("flex");
+      audioVolume.classList.add("hidden");
+
+      noAudio.classList.remove("hidden");
+      noAudio.classList.add("flex");
+
+      _audio.volume = 0;
+      dotSound.style.left = "0px";
+    });
+
+    noAudio.addEventListener("click", () => {
+      audioVolume.classList.remove("hidden");
+      audioVolume.classList.add("flex");
+
+      noAudio.classList.remove("flex");
+      noAudio.classList.add("hidden");
+
+      dotSound.style.left = `${clickSound}px`;
+      _audio.volume = `${clickSound / 100}`;
     });
   });
 });
