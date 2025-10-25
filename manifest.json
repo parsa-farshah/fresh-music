@@ -1,0 +1,22 @@
+{
+  "name": "parnian school",
+  "short_name": "parnian",
+  "start_url": "index.php",
+  "display": "standalone",
+  "background_color": "#fe585a",
+  "theme_color": "#fe585a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://trainingsitedesign.ir/logo.png",
+      "type": "image/png",
+      "sizes": "512×512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://trainingsitedesign.ir/logo2.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ]
+}
