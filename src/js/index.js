@@ -66,7 +66,6 @@ musicItems.forEach((item) => {
       // برای آهنگ های قبلی ریست شه
       _audioAll.forEach((audio) => {
         audio.pause();
-        audio.currentTime = 0;
       });
       // آهنگ پلی شه
       _audio.play();
