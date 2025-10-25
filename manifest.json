@@ -8,13 +8,13 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "https://trainingsitedesign.ir/logo.png",
+      "src": "src/images/512freshMusic.png",
       "type": "image/png",
       "sizes": "512×512",
       "purpose": "any maskable"
     },
     {
-      "src": "https://trainingsitedesign.ir/logo2.png",
+      "src": "src/images/512freshMusic.png",
       "sizes": "144x144",
       "type": "image/png"
     }
