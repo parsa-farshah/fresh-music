@@ -12,10 +12,6 @@ let soundLine = document.querySelector("#soundLine");
 
 let _audioAll = document.querySelectorAll("audio");
 
-// play hussle and motivate
-// playBtn.addEventListener("click", () => {
-//   _audioAll[0].click();
-// });
 
 let shuffle = document.querySelector("#shuffle");
 
