@@ -1,7 +1,7 @@
 {
-  "name": "parnian school",
-  "short_name": "parnian",
-  "start_url": "index.php",
+  "name": "fresh Music",
+  "short_name": "fresh",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#fe585a",
   "theme_color": "#fe585a",
