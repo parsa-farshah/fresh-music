@@ -1,5 +1,5 @@
 {
-  "name": "fresh Music",
+  "name": "fresh-music",
   "short_name": "fresh",
   "start_url": "index.html",
   "display": "standalone",
@@ -10,7 +10,7 @@
     {
       "src": "src/images/512freshMusic.png",
       "type": "image/png",
-      "sizes": "512×512",
+      "sizes": "512x512",
       "purpose": "any maskable"
     },
     {

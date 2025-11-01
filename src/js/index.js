@@ -100,6 +100,14 @@ musicItems.forEach((item) => {
       nowPlay.textContent = `${timeNowMinute}:${
         timeNowSeconds < 10 ? "0" + timeNowSeconds : timeNowSeconds
       }`;
+
+      if (parseInt(_audio.currentTime) == parseInt(_audio.duration)) {
+        if (parseInt(dataNumberMusicClickOn) == 7) {
+          musicItems[0].click();
+        } else {
+          _forward.click();
+        }
+      }
     });
 
     let TimeLineMusicWrapper = document.querySelector("#TimeLineMusicWrapper");
@@ -317,7 +325,6 @@ musicItems.forEach((item) => {
 });
 
 // ///////// for pwa
-
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
     .register("serviceWorker.js")
@@ -327,27 +334,4 @@ if ("serviceWorker" in navigator) {
     .catch((err) => {
       console.log("service worker not registred !!", err);
     });
-}
-
-// notiff for install
-const button = document.getElementById("notifications");
-button.addEventListener("click", () => {
-  Notification.requestPermission().then((result) => {
-    if (result === "granted") {
-      randomNotification();
-    }
-  });
-});
-
-function randomNotification() {
-  const randomItem = Math.floor(Math.random() * games.length);
-  const notifTitle = games[randomItem].name;
-  const notifBody = `Created by ${games[randomItem].author}.`;
-  const notifImg = `data/img/${games[randomItem].slug}.jpg`;
-  const options = {
-    body: notifBody,
-    icon: notifImg,
-  };
-  new Notification(notifTitle, options);
-  setTimeout(randomNotification, 30000);
 }
