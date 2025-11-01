@@ -12,7 +12,6 @@ let soundLine = document.querySelector("#soundLine");
 
 let _audioAll = document.querySelectorAll("audio");
 
-
 let shuffle = document.querySelector("#shuffle");
 
 // shuffle play
@@ -98,7 +97,9 @@ musicItems.forEach((item) => {
       let timeNowSeconds = Math.floor(_audio.currentTime % 60);
 
       let nowPlay = document.querySelector("#nowPlay");
-      nowPlay.textContent = `${timeNowMinute}:${timeNowSeconds}`;
+      nowPlay.textContent = `${timeNowMinute}:${
+        timeNowSeconds < 10 ? "0" + timeNowSeconds : timeNowSeconds
+      }`;
     });
 
     let TimeLineMusicWrapper = document.querySelector("#TimeLineMusicWrapper");
