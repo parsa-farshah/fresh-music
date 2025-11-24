@@ -70,17 +70,43 @@ musicItems.forEach((item) => {
       // ///////////////
       pauseBtn.classList.remove("hidden");
       pauseBtn.classList.add("flex");
+
+      /////////////////////////// go to mute
+
+      audioVolume.addEventListener("click", () => {
+        audioVolume.classList.remove("flex");
+        audioVolume.classList.add("hidden");
+
+        noAudio.classList.remove("hidden");
+        noAudio.classList.add("flex");
+
+        dotLine.style.width = "0px";
+
+        _audio.volume = 0;
+        dotSound.style.left = "0px";
+      });
+
+      noAudio.addEventListener("click", () => {
+        audioVolume.classList.remove("hidden");
+        audioVolume.classList.add("flex");
+
+        noAudio.classList.remove("flex");
+        noAudio.classList.add("hidden");
+        dotLine.style.width = `${clickSound}px`;
+        dotSound.style.left = `${clickSound}px`;
+
+        _audio.volume = `${clickSound / 100}`;
+      });
     });
 
     // pause btn
     pauseBtn.addEventListener("click", () => {
-      // برای آهنگ های قبلی ریست شه
       _audioAll.forEach((audio) => {
         audio.pause();
       });
-      // آهنگ پلی شه
+
       _audio.pause();
-      // دکمه ها درست شن
+
       playBtn.classList.remove("hidden");
       playBtn.classList.add("block");
       // /////////////////
